@@ -30,6 +30,15 @@ eg. Example of invalid lambda
 2. `(String s) -> {"Iron Man";}`
 
     **Reason** :  “Iron Man” is an expression, not a statement. To make this lambda valid, you can remove the curly braces and semicolon as follows: `(String s) -> "Iron Man"`. Or if you prefer, you can use an explicit return statement as follows: `(String s) -> {return "Iron Man";`}.
+    
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#### **Where can we use lambda ?**
+
+   We can use a lambda expression in the context of a functional interface.
+   
+---------------------------------------------------------------------------------------
 
 
 

@@ -45,4 +45,22 @@ eg. Example of invalid lambda
     Because  Boxed values are essentially a wrapper around primitive types and are stored on the heap. Therefore, boxed values use more memory and require additional memory lookups to fetch the wrapped primitive value.
     
 
+##### **3. capturing lambdas**
 
+    Lambda expression which are using free variables (variables that aren’t the parameters and defined in an outer scope)
+    is called capturing lambdas.
+    
+    eg. int portNumber = 1337;
+        Runnable r = () -> System.out.println(portNumber);
+        
+**Following variables we can use inside the lambda**
+1. Instance variables
+2. Static variables
+3. Local variables have to be explicitly declared final or are effectively final
+    
+    **_Why local variables have to be final?_**  
+    **Ans**: Instance variables are stored on the heap, whereas local variables live on the stack. If a lambda could access 
+         the local variable directly and the lambda were used in a thread, then the thread using the lambda could try to 
+         access the variable after the thread that allocated the variable had deallocated it. Hence, Java implements access 
+         to a free local variable as access to a copy of it rather than access to the original variable. This makes no 
+         difference if the local variable is assigned to only once—hence the restriction.

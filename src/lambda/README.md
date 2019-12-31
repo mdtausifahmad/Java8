@@ -34,15 +34,15 @@ eg. Example of invalid lambda
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#### **Where can we use lambda ?**
+#### **1. Where can we use lambda ?**
 
-   We can use a lambda expression in the context of a functional interface.
+    We can use a lambda expression in the context of a functional interface.
    
----------------------------------------------------------------------------------------
 
+#### **2. If we have Predicate<T> then why we need IntPredicate and LongPredicate etc?**
 
-
-
-
+    Java 8 brings a specialized version of the functional interfaces  in order to avoid autoboxing operations when the inputs or outputs are primitives. 
+    Because  Boxed values are essentially a wrapper around primitive types and are stored on the heap. Therefore, boxed values use more memory and require additional memory lookups to fetch the wrapped primitive value.
+    
 
 

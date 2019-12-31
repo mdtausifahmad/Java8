@@ -64,3 +64,8 @@ eg. Example of invalid lambda
          access the variable after the thread that allocated the variable had deallocated it. Hence, Java implements access 
          to a free local variable as access to a copy of it rather than access to the original variable. This makes no 
          difference if the local variable is assigned to only once—hence the restriction.
+
+
+##### **4. Type Inference**
+
+![Image of Type Inference](https://github.com/mdtausifahmad/Java8/blob/master/src/lambda/typechecking.jpg)

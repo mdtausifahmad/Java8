@@ -1,5 +1,7 @@
 package lambda.functional;
 
+import behaviorParameterization.modal.Apple;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -19,6 +21,15 @@ public class PredicateTest {
         Predicate<String> isEmpty = s -> s.isEmpty();
 
         System.out.println(filter(names,startsWithA));
+
+
+        Predicate<Apple> redApple = apple -> apple.getColor().equalsIgnoreCase("red");
+
+        Predicate<Apple> notRedApple = redApple.negate();
+
+        Predicate<Apple> heavyApple = apple -> apple.getWeight() > 150;
+
+        Predicate<Apple> readAndHeavyApple = redApple.and(heavyApple);
 
     }
 

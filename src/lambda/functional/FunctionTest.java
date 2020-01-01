@@ -14,7 +14,16 @@ public class FunctionTest {
 
         List<Integer> integers = List.of(1,2,3,4,5,6);
 
-        System.out.println(map(integers, integer -> integer * 2));
+        //System.out.println(map(integers, integer -> integer * 2));
+
+
+        Function<Integer, Integer> increment = i -> i + 1;
+
+        Function<Integer, Integer> multiply = i -> i * 2;
+
+        Function<Integer, Integer> combine = increment.andThen(multiply);
+
+        System.out.println(combine.apply(2));
 
     }
 

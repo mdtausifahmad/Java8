@@ -1,9 +1,6 @@
 package stream;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -13,6 +10,13 @@ import java.util.stream.Collectors;
 public class StreamBasic {
 
     public static void main(String[] args) {
+
+        List<String> strings = null;//List.of("a","b","c","d");
+
+        Optional.ofNullable(strings).stream().forEach(strings1 -> {
+            strings1.forEach(System.out::println);
+        });
+
 
     }
 

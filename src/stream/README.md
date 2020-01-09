@@ -21,8 +21,8 @@ operations.
 ```
 
 - **Functional in nature**  
-``` An operation on a stream produces a result, but **does not modify its 
- source**.
+``` 
+An operation on a stream produces a result, but does not modify its source.
 ```
 
 - **Laziness-seeking** -   
@@ -54,7 +54,6 @@ The elements of a stream are only visited once during the life of a stream. Like
    *  **Stateless** - Stateless operations, <stype>such as `filter` and `map`, retain no state from previously seen element when processing a new element -- each element can be processed independently of operations on other elements
    
    *  **Stateful**  - Stateful operations, such as `distinct` and `sorted`, may incorporate state from previously seen elements when processing new elements.  
-                    
                     - Stateful operations may need to process the entire input before producing a result.
                    
 **2. Terminal operations**
@@ -64,4 +63,10 @@ The elements of a stream are only visited once during the life of a stream. Like
 - It executes the stream pipeline and produces a result. 
 
 - After the terminal operation is performed, the stream pipeline is considered consumed, and can no longer be used
+
+### **Working with streams**
+
+#### **Filtering and slicing**
+
+
 

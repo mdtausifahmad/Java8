@@ -68,5 +68,19 @@ The elements of a stream are only visited once during the life of a stream. Like
 
 #### **Filtering and slicing**
 
+##### Filtering
 
+with help of `filter` method
+
+##### Slicing
+
+`takeWhile` and     `dropWhile` method
+
+ ##### Truncating 
+ 
+ `limit` and `skip` method
+ 
+ ##### Mapping
+ 
+ 
 

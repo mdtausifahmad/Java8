@@ -82,5 +82,7 @@ with help of `filter` method
  
  ##### Mapping
  
+ `map` 
+ 
  
 

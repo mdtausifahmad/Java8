@@ -52,6 +52,14 @@ public class Filtering {
                 .filter(dish -> dish.getType().name().equals(Dish.Type.MEAT))
                 .limit(2)
                 .collect(Collectors.toUnmodifiableList());
+
+
+
+        //count no of dishes
+        final long count = Dish.menu.stream().count();
+        System.out.println("Count " +count);
     }
+
+
 
 }

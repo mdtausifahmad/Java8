@@ -18,6 +18,20 @@ public class StreamBasic {
         });
 
 
+        List<Integer> numbers = List.of(1,2,3,4,5,6);
+        int sum = numbers.stream().reduce(0, (a, b) -> a + b);
+
+        Optional<Integer> sum1 = numbers.stream().reduce((integer, integer2) -> integer + integer2);
+
+        int product = numbers.stream().reduce(1, (a, b) -> a * b);
+
+        Optional<Integer> max = numbers.stream().reduce(Integer::max);
+
+        Optional<Integer> min = numbers.stream().reduce(Integer::min);
+
+        System.out.println(sum1.get());
+
+
     }
 
     public static List<String> getLowCaloricDishesNamesInJava7(List<Dish> dishes){

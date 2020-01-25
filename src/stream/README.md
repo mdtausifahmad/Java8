@@ -84,5 +84,7 @@ with help of `filter` method
  
  `map` 
  
+ #### **Collecting data with streams**
+ 
  
 

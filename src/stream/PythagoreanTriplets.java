@@ -19,5 +19,7 @@ public class PythagoreanTriplets {
                         );
 
         pythagoreanTriples.forEach(ints -> System.out.println(ints[0]+" "+ints[1]+" "+ints[2]));
+
+
     }
 }

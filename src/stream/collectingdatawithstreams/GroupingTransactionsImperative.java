@@ -2,6 +2,7 @@ package stream.collectingdatawithstreams;
 
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * User: MD.Ahmad
@@ -44,6 +45,15 @@ public class GroupingTransactionsImperative {
             }
             transactionsForCurrency.add(transaction);
         }
+
+
+        final Map<Boolean, List<Transaction>> collect = transactions.stream().collect(Collectors.groupingBy(transaction -> transaction.getValue() > 400));
+
+        collect.forEach((aBoolean, transactions1) -> {
+            if(aBoolean == true){
+                System.out.println(transactions1);
+            }
+        });
     }
 
 

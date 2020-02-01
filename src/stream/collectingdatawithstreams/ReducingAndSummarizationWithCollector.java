@@ -6,6 +6,8 @@ import java.util.Comparator;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.averagingInt;
+
 /**
  * User: MD.Ahmad
  * Date: 1/29/2020 9:32 AM
@@ -25,6 +27,10 @@ public class ReducingAndSummarizationWithCollector {
 
         // Comparing dishes based on their calorie content
         final Optional<Dish> mostCalorieDish  = Dish.menu.stream().collect(Collectors.maxBy(dishCaloriesComparator));
+
+
+        double avgCalories =
+                Dish.menu.stream().collect(averagingInt(Dish::getCalories));
 
     }
 }

@@ -15,11 +15,6 @@ public class FutureAndException {
 
         Future<Integer> result = executorService.submit(() -> proces());
 
-        sleep(2000);
-        System.out.println("Cancelling...");
-        result.cancel(true);
-
-        if(result.isCancelled())
          System.out.println(result.get());
 
         executorService.shutdown();
@@ -30,12 +25,10 @@ public class FutureAndException {
 
         System.out.println("Starting work...");
 
-        if(sleep(10000)){
-            System.out.println("Done work...");
-            return 2;
-        }
+        sleep(3000);
 
-        return 0;
+        throw new RuntimeException("Code is mad");
+
     }
 
     private static boolean sleep(int i) {

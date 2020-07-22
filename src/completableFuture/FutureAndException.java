@@ -15,12 +15,12 @@ public class FutureAndException {
 
         Future<Integer> result = executorService.submit(() -> proces());
 
-        System.out.println(result.isDone());
+        sleep(2000);
+        System.out.println("Cancelling...");
+        result.cancel(true);
 
-        sleep(10000);
-
-        System.out.println(result.isDone());
-        System.out.println(result.get());
+        if(result.isCancelled())
+         System.out.println(result.get());
 
         executorService.shutdown();
         executorService.awaitTermination(20, TimeUnit.SECONDS);
@@ -30,17 +30,21 @@ public class FutureAndException {
 
         System.out.println("Starting work...");
 
-        sleep(10000);
+        if(sleep(10000)){
+            System.out.println("Done work...");
+            return 2;
+        }
 
-        System.out.println("Done work...");
-        return 2;
+        return 0;
     }
 
-    private static void sleep(int i) {
+    private static boolean sleep(int i) {
         try {
             Thread.sleep(i);
+            return true;
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println("Interrupted...");
+            return false;
         }
     }
 }
